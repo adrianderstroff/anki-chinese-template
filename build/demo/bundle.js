@@ -167,7 +167,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       tone: r
     };
   },
-      d = function d(e, n) {
+      a = function a(e, n) {
     var t = function (e) {
       var n = [],
           t = "";
@@ -191,19 +191,19 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       var _n2 = t[_e2],
           _o2 = u(r[_e2]),
           _l = _o2.pinyin,
-          _d = _o2.tone;
+          _a = _o2.tone;
 
       i.push({
         hanzi: _n2,
         pinyin: _l,
-        tone: _d
+        tone: _a
       });
     }
 
     return i;
   };
 
-  var a = function a() {
+  var d = function d() {
     var e = document.getElementById("hz").innerHTML,
         n = document.getElementById("py").innerHTML;
 
@@ -219,14 +219,14 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
           _r.innerHTML = e[i].hanzi, _r.className = "tone" + e[i].tone + _t2;
 
-          var _d2 = document.createElement("pinyin");
+          var _a2 = document.createElement("pinyin");
 
-          window.savedPinyin.push(o(e[i].pinyin, e[i].tone)), _d2.innerHTML = "&zwnj;", _d2.className = "tone" + e[i].tone + _t2, _n3.appendChild(_r), _n3.appendChild(_d2), _u.appendChild(_n3), _l2.appendChild(_u);
+          window.savedPinyin.push(o(e[i].pinyin, e[i].tone)), _a2.innerHTML = "&zwnj;", _a2.className = "tone" + e[i].tone + _t2, _n3.appendChild(_r), _n3.appendChild(_a2), _u.appendChild(_n3), _l2.appendChild(_u);
         }
 
         document.getElementById(t).outerHTML = "", document.getElementById(r).outerHTML = "";
       }
-    })(d(e, n), "ch", "hz", "py");
+    })(a(e, n), "ch", "hz", "py");
   },
       c = function c() {
     var e = document.getElementById("tl");
@@ -255,14 +255,19 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }();
   };
 
-  var m = {
+  var m = [{
     hanzi: "我是从A來的.",
     pinyin: "wo3 shi4 cong2 A lai2 de .",
     translation: "Im from ... . ; I am from ...",
     hint: "no hint here"
-  };
+  }, {
+    hanzi: "狼吞虎咽",
+    pinyin: "lang2 tun1 hu3 yan4",
+    translation: "to brush food away like a wolf",
+    hint: ""
+  }];
   document.addEventListener("DOMContentLoaded", function (e) {
     var n;
-    n = m, document.getElementById("hz").innerHTML = n.hanzi, document.getElementById("py").innerHTML = n.pinyin, document.getElementById("tl").innerHTML = n.translation, document.getElementById("aw").innerHTML = n.hint, a(), c();
+    n = m[1], document.getElementById("hz").innerHTML = n.hanzi, document.getElementById("py").innerHTML = n.pinyin, document.getElementById("tl").innerHTML = n.translation, document.getElementById("aw").innerHTML = n.hint, d(), c();
   });
 }]);

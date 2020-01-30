@@ -1,13 +1,19 @@
 import {makeFront} from './src/front';
 import {makeBack} from './src/back';
 
-const card = {
-    hanzi:       '我是从A來的.',
-    pinyin:      'wo3 shi4 cong2 A lai2 de .',
-    translation: 'Im from ... . ; I am from ...',
-    hint:        'no hint here'
-}
-
+const cards = [
+    {
+        hanzi:       '我是从A來的.',
+        pinyin:      'wo3 shi4 cong2 A lai2 de .',
+        translation: 'Im from ... . ; I am from ...',
+        hint:        'no hint here'
+    }, {
+        hanzi: '狼吞虎咽',
+        pinyin: 'lang2 tun1 hu3 yan4',
+        translation: 'to brush food away like a wolf',
+        hint: ''
+    }
+]
 let insertCard = (c) => {
     document.getElementById('hz').innerHTML = c.hanzi;
     document.getElementById('py').innerHTML = c.pinyin;
@@ -16,7 +22,7 @@ let insertCard = (c) => {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    insertCard(card);
+    insertCard(cards[1]);
     makeFront();
     makeBack();
 });

@@ -77,7 +77,7 @@ gulp.task('compile-web', () => {
 });
 
 gulp.task('copy-assets', () => {
-    return gulp.src(['./app/assets/*.css', './app/assets/index.html'])
+    return gulp.src(['./app/assets/*.css', './app/assets/index*.html'])
         .pipe(gulp.dest('build/demo'));
 });
 

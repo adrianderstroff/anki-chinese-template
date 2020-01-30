@@ -8,29 +8,30 @@
     <link rel="stylesheet" href="style2.css">
     <style>
         body {
-            background: gray;
+            padding-left: 20%;
+            padding-right: 20%;
+            background-color: lightgray;
         }
-        .card {
-            width: 512px;
+        .container {
+            width: 100%;
+            height: 50%;
+            display: flex;
+        }
+        .container > iframe {
+            flex: 1;
             height: 100%;
-            margin: 0 auto;
-            border: 1px gray solid;
-            border-radius: 15px;
+            border: none;
         }
     </style>
-    <script src="bundle.js"></script>
 </head>
 <body>
-    <div class="card">
-        <div id="hz">{{Hanzi}}</div>
-        <div id="py">{{Pinyin}}</div>
-        <div id="ch"></div>
-        <div id="db"></div>
-
-        <hr id="answer"></hr>
-
-        <container id="tl">{{Translation}}</container>
-        <container id="aw">{{Hint}}</container>
+    <div class="container">
+        <iframe src="index-style1.html"></iframe>
+        <iframe src="index-style2.html"></iframe>
+    </div>
+    <div class="container">
+        <iframe src="index-style3.html"></iframe>
+        <iframe src="index-style4.html"></iframe>
     </div>
 </body>
 </html>
