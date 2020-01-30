@@ -29,6 +29,11 @@ hanzi {
 	border-style: solid;
 	font-size: xx-large;
 	text-align: center;
+	font-weight: bold;
+}
+
+hanzi.small {
+	font-size: x-large;
 }
 
 hanzi.tone1 { color: #C0392B; }
@@ -46,6 +51,10 @@ pinyin {
 	border-style: solid;
 	font-size: medium;
 	text-align: center;
+}
+
+pinyin.small {
+	font-size: small;
 }
 
 pinyin.tone1 { color: #E74C3C; }

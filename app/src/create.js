@@ -1,6 +1,8 @@
 import {makeTonemarks} from './tone';
 
-let savedPinyin = [];
+if(window.savedPinyin === undefined) {
+    window.savedPinyin = [];
+}
 
 // create the final template for hanzi and pinyin
 let createTemplate = (words, resultId, hanziId, pinyinId) => {
@@ -14,20 +16,20 @@ let createTemplate = (words, resultId, hanziId, pinyinId) => {
         for(var i = 0; i < words.length; i++) {
             // create block
             let charComp = document.createElement('character');
-            //let colors = getToneColor(words[i].tone);
+
+            // add special class when there are more than 4 characters
+            let isSmallClass = (words.length > 4) ? " small" : "";
 
             // create hanzi container
             let hanziComp = document.createElement('hanzi');
             hanziComp.innerHTML = words[i].hanzi;
-            //hanziComp.style.background = colors.hanzi;
-            hanziComp.className = 'tone'+words[i].tone;
+            hanziComp.className = 'tone'+words[i].tone + isSmallClass;
 
             // create pinyin container
             let pinyinComp = document.createElement('pinyin');
-            savedPinyin.push(makeTonemarks(words[i].pinyin, words[i].tone));
+            window.savedPinyin.push(makeTonemarks(words[i].pinyin, words[i].tone));
             pinyinComp.innerHTML = '&zwnj;'; // non printable character to preserve elements size
-            //pinyinComp.style.background = colors.pinyin;
-            pinyinComp.className = 'tone'+words[i].tone;
+            pinyinComp.className = 'tone'+words[i].tone + isSmallClass;
 
             // add hanzi and pinyin to block
             charComp.appendChild(hanziComp);
@@ -64,7 +66,7 @@ let processTranslation = (text, translationId) => {
 let fillPinyin = () => {
     let pinyinElements = document.getElementsByTagName('pinyin');
     for (let i = 0; i < pinyinElements.length; i++) {
-        pinyinElements[i].innerHTML = savedPinyin[i];
+        pinyinElements[i].innerHTML = window.savedPinyin[i];
     }
 }
 
