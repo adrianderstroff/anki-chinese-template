@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anki-Chinese-Web</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        body {
+            background: gray;
+        }
+        .card {
+            width: 512px;
+            height: 100%;
+            margin: 0 auto;
+            border: 1px gray solid;
+            border-radius: 15px;
+        }
+    </style>
+    <script src="bundle.js"></script>
+</head>
+<body>
+    <div class="card">
+        <div id="hz">{{Hanzi}}</div>
+        <div id="py">{{Pinyin}}</div>
+        <div id="ch"></div>
+        <div id="db"></div>
+
+        <hr id="answer"></hr>
+
+        <container id="tl">{{Translation}}</container>
+        <container id="aw">{{Hint}}</container>
+    </div>
+</body>
+</html>

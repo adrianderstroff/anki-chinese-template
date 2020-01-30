@@ -1,0 +1,25 @@
+{
+  "name": "anki-chinese-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "gulp",
+    "inject": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "adrianderstroff",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^5.0.5",
+    "gulp-uglify": "^3.0.2",
+    "webpack-stream": "^5.2.1"
+  }
+}

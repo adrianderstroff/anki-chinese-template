@@ -1,0 +1,64 @@
+html, body{
+	height: 90%;
+}
+
+.card {
+	font-family: arial;
+ 	font-size: 20px;
+ 	text-align: center;
+ 	color: black;
+ 	background-color: white;
+}
+
+wrap {
+	display: block;
+	text-align: center;
+}
+
+character {
+	display: inline-block;
+	margin: 2px;
+}
+
+hanzi {
+	display:block;
+	padding: 15px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-size: xx-large;
+	text-align: center;
+}
+
+hanzi.tone1 { background-color: #C0392B; }
+hanzi.tone2 { background-color: #27AE60; }
+hanzi.tone3 { background-color: #2980B9; }
+hanzi.tone4 { background-color: #8E44AD; }
+hanzi.tone5 { background-color: #7F8C8D; }
+
+pinyin {
+	display: block;
+	padding: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font-size: medium;
+	text-align: center;
+}
+
+pinyin.tone1 { background-color: #E74C3C; }
+pinyin.tone2 { background-color: #2ECC71; }
+pinyin.tone3 { background-color: #3498DB; }
+pinyin.tone4 { background-color: #9B59B6; }
+pinyin.tone5 { background-color: #95A5A6; }
+
+container {
+	display: block;
+   	width: 100%;
+   	height: 30%;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+container div {
+    margin-bottom: 15px;
+}
