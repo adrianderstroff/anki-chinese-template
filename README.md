@@ -22,6 +22,7 @@ To create the layout the number of *chunks* for pinyin and hanzi have to fit. Fo
 wo3 shi4 cong2 ... lai2 de .
 ```
 Corresponding Chunks are:
+
 我 | 是 | 从 | ... | 來 | 的 | .
 :--|----|----|-----|----|----|--:
 wo3 | shi4 | cong2 | ... | lai2 | de | .
