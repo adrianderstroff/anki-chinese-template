@@ -1,0 +1,83 @@
+html, body{
+	height: 90%;
+	overflow: hidden;
+}
+
+.card {
+	font-family: arial;
+ 	font-size: 20px;
+ 	text-align: center;
+ 	color: black;
+ 	background-color: white;
+}
+
+wrap {
+	display: block;
+	text-align: center;
+}
+
+character {
+	display: inline-block;
+	margin: 2px;
+}
+
+hanzi {
+	display:block;
+	box-sizing: border-box;
+	padding: 15px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-color: gray;
+	border-width: 2px;
+	border-bottom-width: 1px;
+	border-style: solid;
+	font-size: xx-large;
+	text-align: center;
+	font-weight: bold;
+}
+
+hanzi.small {
+	font-size: x-large;
+}
+
+hanzi.tone1 { color: #C0392B; }
+hanzi.tone2 { color: #27AE60; }
+hanzi.tone3 { color: #2980B9; }
+hanzi.tone4 { color: #8E44AD; }
+hanzi.tone5 { color: #7F8C8D; }
+
+pinyin {
+	display: block;
+	box-sizing: border-box;
+	padding: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-width: 2px;
+	border-top-width: 0;
+	border-style: solid;
+	font-size: medium;
+	text-align: center;
+}
+
+pinyin.small {
+	font-size: small;
+}
+
+pinyin.tone1 { color: #E74C3C; }
+pinyin.tone2 { color: #2ECC71; }
+pinyin.tone3 { color: #3498DB; }
+pinyin.tone4 { color: #9B59B6; }
+pinyin.tone5 { color: #95A5A6; }
+
+container {
+	display: block;
+   	width: 100%;
+   	height: 30%;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+container div {
+    margin-bottom: 15px;
+}
