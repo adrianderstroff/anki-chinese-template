@@ -6,6 +6,8 @@ Hanzi and pinyin are wrapped in a box with a color that corresponds to a tone. T
 style1 | style2
 :------|------:
 ![Mesh Instancing](github/style1.PNG) | ![Mesh Instancing](github/style2.PNG)
+style3 | style4
+![Mesh Instancing](github/style3.PNG) | ![Mesh Instancing](github/style4.PNG)
 
 ## Usage
 
