@@ -1,0 +1,82 @@
+html, body{
+	height: 90%;
+	overflow: hidden;
+}
+
+.card {
+	font-family: arial;
+ 	font-size: 20px;
+ 	text-align: center;
+ 	color: black;
+ 	background-color: white;
+}
+
+wrap {
+	display: block;
+	text-align: center;
+}
+
+character {
+	display: inline-block;
+	margin: 2px;
+}
+
+hanzi {
+	display:block;
+	padding: 15px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-color: gray;
+	border-width: 1px;
+	border-style: solid;
+	font-size: xx-large;
+	text-align: center;
+	font-weight: bold;
+}
+
+hanzi.small {
+	font-size: x-large;
+}
+
+hanzi.tone1 { color: #000000; }
+hanzi.tone2 { color: #000000; }
+hanzi.tone3 { color: #000000; }
+hanzi.tone4 { color: #000000; }
+hanzi.tone5 { color: #000000; }
+
+pinyin {
+	display: block;
+	padding: 5px;
+	color: white;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-color: gray;
+	border-width: 1px;
+	border-top-width: 0;
+	border-style: solid;
+	font-size: medium;
+	text-align: center;
+}
+
+pinyin.small {
+	font-size: small;
+}
+
+pinyin.tone1 { background-color: #ff0000; }
+pinyin.tone2 { background-color: #d89000; }
+pinyin.tone3 { background-color: #00a000; }
+pinyin.tone4 { background-color: #0000ff; }
+pinyin.tone5 { background-color: #808080; }
+
+container {
+	display: block;
+   	width: 100%;
+   	height: 30%;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+container div {
+    margin-bottom: 15px;
+}
