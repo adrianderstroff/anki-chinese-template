@@ -8,6 +8,8 @@ style1 | style2
 ![Mesh Instancing](github/style1.PNG) | ![Mesh Instancing](github/style2.PNG)
 style3 | style4
 ![Mesh Instancing](github/style3.PNG) | ![Mesh Instancing](github/style4.PNG)
+style5 | style6
+![Mesh Instancing](github/style5.PNG) | ![Mesh Instancing](github/style6.PNG)
 
 ## Usage
 
