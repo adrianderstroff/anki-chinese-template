@@ -12,6 +12,16 @@ const cards = [
         pinyin: 'lang2 tun1 hu3 yan4',
         translation: 'to brush food away like a wolf',
         hint: ''
+    }, {
+        hanzi: '有的A,有的B',
+        pinyin: 'you3 de A , you3 de B',
+        translation: 'some ..., some ...',
+        hint: ''
+    }, {
+        hanzi: '有的...,有的....',
+        pinyin: 'you3 de ... , you3 de ... .',
+        translation: 'some ..., some ...',
+        hint: 'this is hint 1'
     }
 ]
 let insertCard = (c) => {
@@ -22,7 +32,7 @@ let insertCard = (c) => {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    insertCard(cards[0]);
+    insertCard(cards[3]);
     makeFront();
     makeBack();
 });

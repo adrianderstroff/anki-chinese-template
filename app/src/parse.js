@@ -9,6 +9,11 @@ const isNumber = (char) => {
     return (char >= '0' && char <= '9');
 }
 
+// checks if character is a dot '.'
+const isDot = (char) => {
+    return char === '.'; 
+}
+
 // each chinese character is a chunk and a number of any other characters
 // is also a chunk
 const chunkHanzi = (hanziText) => {
@@ -18,15 +23,15 @@ const chunkHanzi = (hanziText) => {
         // grab next character
         let char = hanziText.charAt(i);
         
-        // either concatenate characters or 
-        if(isChineseCharacter(char)) {
+        // either concatenate up to 3 dots or simply add character to the list
+        if(isDot(char) && chunk.length < 3) {
+            chunk += char;
+        } else {
             if(chunk.length > 0) {
                 chunks.push(chunk);
                 chunk = "";
             }
             chunks.push(char);
-        } else {
-            chunk += char;
         }
     }
 

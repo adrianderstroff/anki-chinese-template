@@ -5,20 +5,20 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 !function (e) {
   var n = {};
 
-  function t(o) {
-    if (n[o]) return n[o].exports;
-    var r = n[o] = {
-      i: o,
+  function t(i) {
+    if (n[i]) return n[i].exports;
+    var o = n[i] = {
+      i: i,
       l: !1,
       exports: {}
     };
-    return e[o].call(r.exports, r, r.exports, t), r.l = !0, r.exports;
+    return e[i].call(o.exports, o, o.exports, t), o.l = !0, o.exports;
   }
 
-  t.m = e, t.c = n, t.d = function (e, n, o) {
+  t.m = e, t.c = n, t.d = function (e, n, i) {
     t.o(e, n) || Object.defineProperty(e, n, {
       enumerable: !0,
-      get: o
+      get: i
     });
   }, t.r = function (e) {
     "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
@@ -29,16 +29,16 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }, t.t = function (e, n) {
     if (1 & n && (e = t(e)), 8 & n) return e;
     if (4 & n && "object" == _typeof(e) && e && e.__esModule) return e;
-    var o = Object.create(null);
-    if (t.r(o), Object.defineProperty(o, "default", {
+    var i = Object.create(null);
+    if (t.r(i), Object.defineProperty(i, "default", {
       enumerable: !0,
       value: e
-    }), 2 & n && "string" != typeof e) for (var r in e) {
-      t.d(o, r, function (n) {
+    }), 2 & n && "string" != typeof e) for (var o in e) {
+      t.d(i, o, function (n) {
         return e[n];
-      }.bind(null, r));
+      }.bind(null, o));
     }
-    return o;
+    return i;
   }, t.n = function (e) {
     var n = e && e.__esModule ? function () {
       return e["default"];
@@ -53,7 +53,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   "use strict";
 
   t.r(n);
-  var o = {
+  var i = {
     a: {
       priority: 1,
       tone: {
@@ -116,37 +116,37 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }
   };
 
-  var r = function r(e) {
-    var n = o[e];
+  var o = function o(e) {
+    var n = i[e];
     return n = null != n ? n.priority : 5, n;
   },
-      i = function i(e, n) {
+      l = function l(e, n) {
     var t = e,
-        i = 6,
-        l = -1;
+        l = 6,
+        r = -1;
 
     for (var d = 0; d < e.length; d++) {
       var _n = e.charAt(d),
-          _t = r(_n);
+          _t = o(_n);
 
-      _t < i && (i = _t, l = d);
+      _t < l && (l = _t, r = d);
     }
 
-    if (-1 !== l) {
-      var _r = e.charAt(l),
-          _i = function (e, n) {
+    if (-1 !== r) {
+      var _o = e.charAt(r),
+          _l = function (e, n) {
         var t = "",
-            r = o[e];
+            o = i[e];
 
-        if (null != r) {
-          var _e = r.tone[n];
-          t = null != _e ? _e : r[5];
+        if (null != o) {
+          var _e = o.tone[n];
+          t = null != _e ? _e : o[5];
         } else t = e;
 
         return t;
-      }(_r, n);
+      }(_o, n);
 
-      t = e.replace(_r, _i);
+      t = e.replace(_o, _l);
     }
 
     return t;
@@ -154,103 +154,103 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
   void 0 === window.savedPinyin && (window.savedPinyin = []);
 
-  var l = function l(e) {
+  var r = function r(e) {
     if (e.nodeType == Node.TEXT_NODE) return e;
     if (void 0 === e) return e;
     var n = e.childNodes;
     if (void 0 !== n) for (var _e2 = 0; _e2 < n.length; _e2++) {
-      var _t2 = l(n[_e2]);
+      var _t2 = r(n[_e2]);
 
       if (null != _t2) return _t2;
     }
   };
 
   var d = function d(e) {
-    return null !== e.match(/[\u3400-\u9FBF]/);
+    return "." === e;
   },
-      u = function u(e) {
+      a = function a(e) {
     var n = e.length,
         t = e,
-        o = "5";
-    var r;
-    return (r = e[n - 1]) >= "0" && r <= "9" && (t = e.slice(0, n - 1), o = e[n - 1]), {
+        i = "5";
+    var o;
+    return (o = e[n - 1]) >= "0" && o <= "9" && (t = e.slice(0, n - 1), i = e[n - 1]), {
       pinyin: t,
-      tone: o
+      tone: i
     };
   },
-      a = function a(e, n) {
+      u = function u(e, n) {
     var t = function (e) {
       var n = [],
           t = "";
 
-      for (var o = 0; o < e.length; o++) {
-        var _r2 = e.charAt(o);
+      for (var i = 0; i < e.length; i++) {
+        var _o2 = e.charAt(i);
 
-        d(_r2) ? (t.length > 0 && (n.push(t), t = ""), n.push(_r2)) : t += _r2;
+        d(_o2) && t.length < 3 ? t += _o2 : (t.length > 0 && (n.push(t), t = ""), n.push(_o2));
       }
 
       return 0 !== t.length && n.push(t), n;
     }(e),
-        o = function (e) {
+        i = function (e) {
       return e.split(" ");
     }(n);
 
-    if (t.length !== o.length) {
-      throw "Length of hanzi and pinyin chunks do not match" + " " + ('"' + t.join(",") + '"') + " " + ('"' + o.join(",") + '"');
+    if (t.length !== i.length) {
+      throw "Length of hanzi and pinyin chunks do not match" + " " + ('"' + t.join(",") + '"') + " " + ('"' + i.join(",") + '"');
     }
 
-    var r = [];
+    var o = [];
 
     for (var _e3 = 0; _e3 < t.length; _e3++) {
       var _n2 = t[_e3],
-          _i2 = u(o[_e3]),
-          _l = _i2.pinyin,
-          _d = _i2.tone;
+          _l2 = a(i[_e3]),
+          _r = _l2.pinyin,
+          _d = _l2.tone;
 
-      r.push({
+      o.push({
         hanzi: _n2,
-        pinyin: _l,
+        pinyin: _r,
         tone: _d
       });
     }
 
-    return r;
+    return o;
   };
 
   var c = function c() {
     var e = document.getElementById("hz"),
         n = document.getElementById("py");
-    e = l(e), n = l(n), e = void 0 === e ? "" : e.nodeValue, n = void 0 === n ? "" : n.nodeValue, function (e, n, t, o) {
+    e = r(e), n = r(n), e = void 0 === e ? "" : e.nodeValue, n = void 0 === n ? "" : n.nodeValue, function (e, n, t, i) {
       if (e) {
-        var _l2 = document.getElementById(n),
+        var _r2 = document.getElementById(n),
             _d2 = document.createElement("wrap");
 
-        for (var r = 0; r < e.length; r++) {
+        for (var o = 0; o < e.length; o++) {
           var _n3 = document.createElement("character"),
               _t3 = e.length > 4 ? " small" : "",
-              _o = document.createElement("hanzi");
+              _i = document.createElement("hanzi");
 
-          _o.innerHTML = e[r].hanzi, _o.className = "tone" + e[r].tone + _t3;
+          _i.innerHTML = e[o].hanzi, _i.className = "tone" + e[o].tone + _t3;
 
-          var _u = document.createElement("pinyin");
+          var _a = document.createElement("pinyin");
 
-          window.savedPinyin.push(i(e[r].pinyin, e[r].tone)), _u.innerHTML = "&zwnj;", _u.className = "tone" + e[r].tone + _t3, _n3.appendChild(_o), _n3.appendChild(_u), _d2.appendChild(_n3), _l2.appendChild(_d2);
+          window.savedPinyin.push(l(e[o].pinyin, e[o].tone)), _a.innerHTML = "&zwnj;", _a.className = "tone" + e[o].tone + _t3, _n3.appendChild(_i), _n3.appendChild(_a), _d2.appendChild(_n3), _r2.appendChild(_d2);
         }
 
-        document.getElementById(t).outerHTML = "", document.getElementById(o).outerHTML = "";
+        document.getElementById(t).outerHTML = "", document.getElementById(i).outerHTML = "";
       }
-    }(a(e, n), "ch", "hz", "py");
+    }(u(e, n), "ch", "hz", "py");
   },
-      m = function m() {
+      h = function h() {
     var e = document.getElementById("tl");
-    e = l(e), null != e && (e = e.nodeValue, function (e, n) {
+    e = r(e), null != e && (e = e.nodeValue, function (e, n) {
       var t = document.getElementById(n);
       t.innerHTML = "";
-      var o = e.split(";");
-      if (null != o) for (var _e4 = 0; _e4 < o.length; _e4++) {
+      var i = e.split(";");
+      if (null != i) for (var _e4 = 0; _e4 < i.length; _e4++) {
         var _n4 = document.createElement("div");
 
-        _n4.innerHTML = o[_e4], t.appendChild(_n4);
+        _n4.innerHTML = i[_e4], t.appendChild(_n4);
       }
     }(e, "tl")), function () {
       var e = document.getElementsByTagName("pinyin");
@@ -263,12 +263,23 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         var _e5 = document.createElement("hr"),
             _n6 = document.getElementById("aw");
 
-        _n6.parentNode.insertBefore(_e5, _n6);
+        _n6 = r(_n6);
+        var _t4 = _n6.parentNode;
+
+        _t4.insertBefore(_e5, _n6);
+
+        var _i2 = _n6.nodeValue.split(";");
+
+        if (_t4.innerHTML = "", null != _i2) for (var _e6 = 0; _e6 < _i2.length; _e6++) {
+          var _n7 = document.createElement("div");
+
+          _n7.innerHTML = _i2[_e6], _t4.appendChild(_n7);
+        }
       }
     }();
   };
 
-  var p = [{
+  var m = [{
     hanzi: "我是从A來的.",
     pinyin: "wo3 shi4 cong2 A lai2 de .",
     translation: "Im from ... . ; I am from ...",
@@ -278,9 +289,19 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     pinyin: "lang2 tun1 hu3 yan4",
     translation: "to brush food away like a wolf",
     hint: ""
+  }, {
+    hanzi: "有的A,有的B",
+    pinyin: "you3 de A , you3 de B",
+    translation: "some ..., some ...",
+    hint: ""
+  }, {
+    hanzi: "有的...,有的....",
+    pinyin: "you3 de ... , you3 de ... .",
+    translation: "some ..., some ...",
+    hint: "this is hint 1"
   }];
   document.addEventListener("DOMContentLoaded", function (e) {
     var n;
-    n = p[0], document.getElementById("hz").innerHTML = n.hanzi, document.getElementById("py").innerHTML = n.pinyin, document.getElementById("tl").innerHTML = n.translation, document.getElementById("aw").innerHTML = n.hint, c(), m();
+    n = m[3], document.getElementById("hz").innerHTML = n.hanzi, document.getElementById("py").innerHTML = n.pinyin, document.getElementById("tl").innerHTML = n.translation, document.getElementById("aw").innerHTML = n.hint, c(), h();
   });
 }]);

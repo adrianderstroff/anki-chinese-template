@@ -53,7 +53,7 @@ let processTranslation = (text, translationId) => {
 
     // split translation separated by semicolon into different divs
     let translations = text.split(';');
-    if (translations != null) {
+    if (translations != undefined) {
         for (let i = 0; i < translations.length; i++) {
             let translationDiv = document.createElement('div');
             translationDiv.innerHTML = translations[i];
@@ -78,8 +78,20 @@ let addHRIfHintIsPresent = () => {
         // add ruler before hint
         let hr = document.createElement('hr');
         let aw = document.getElementById('aw');
+        aw = findTextNode(aw);
         let parent = aw.parentNode;
         parent.insertBefore(hr, aw);
+
+        // split hints separated by ; into different divs
+        let hints = aw.nodeValue.split(';');
+        parent.innerHTML = "";
+        if (hints != undefined) {
+            for (let i = 0; i < hints.length; i++) {
+                let hintDiv = document.createElement('div');
+                hintDiv.innerHTML = hints[i];
+                parent.appendChild(hintDiv);
+            }   
+        }
     }
 }
 
