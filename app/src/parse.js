@@ -67,7 +67,11 @@ const parse = (hanziText, pinyinText) => {
 
     // make sure both chunks have the same size
     if(hanziChunks.length !== pinyinChunks.length) {
-        throw 'Length of hanzi and pinyin chunks do not match';
+        let allHanziChunks = '"'+hanziChunks.join(',')+'"';
+        let allPinyinChunks = '"'+pinyinChunks.join(',')+'"';
+        let message = 'Length of hanzi and pinyin chunks do not match';
+        let combinedMessage = message+' '+allHanziChunks+' '+allPinyinChunks;
+        throw combinedMessage;
     }
 
     // turn chunks into words

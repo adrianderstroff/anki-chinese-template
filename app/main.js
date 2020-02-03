@@ -22,7 +22,7 @@ let insertCard = (c) => {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    insertCard(cards[1]);
+    insertCard(cards[0]);
     makeFront();
     makeBack();
 });

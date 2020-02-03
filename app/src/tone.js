@@ -7,19 +7,6 @@ const vocalMap = {
     "v": { priority: 4, tone: { "1": "&#470;", "2": "&#472;", "3": "&#474;", "4": "&#476;", "5": "&#252;" }}
 }
 
-const colorMap = {
-    "1": { hanzi: "#C0392B", pinyin: "#E74C3C" },
-    "2": { hanzi: "#27AE60", pinyin: "#2ECC71" },
-    "3": { hanzi: "#2980B9", pinyin: "#3498DB" },
-    "4": { hanzi: "#8E44AD", pinyin: "#9B59B6" },
-    "5": { hanzi: "#7F8C8D", pinyin: "#95A5A6" },
-}
-
-// utility function to get colors depending on the tone
-function getToneColor(tone) {
-    return colorMap[tone];
-}
-
 // get a vocals priority
 let getVocalPriority = (char) => {
     let priority = vocalMap[char];

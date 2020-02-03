@@ -10,6 +10,10 @@ html, body{
  	color: black;
  	background-color: white;
 }
+.card.nightMode {
+	background-color: black;
+	color: white;
+}
 
 wrap {
 	display: block;
@@ -71,7 +75,7 @@ pinyin.tone5 { color: #95A5A6; }
 
 container {
 	display: block;
-   	width: 100%;
+	width: calc(100% - 30px);
    	height: 30%;
     text-align: left;
     padding-left: 15px;

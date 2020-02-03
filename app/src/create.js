@@ -49,7 +49,7 @@ let createTemplate = (words, resultId, hanziId, pinyinId) => {
 let processTranslation = (text, translationId) => {
     // clear translation
     let root = document.getElementById(translationId);
-    document.getElementById(translationId).innerHTML = '';
+    root.innerHTML = '';
 
     // split translation separated by semicolon into different divs
     let translations = text.split(';');
@@ -83,9 +83,27 @@ let addHRIfHintIsPresent = () => {
     }
 }
 
+// searches for the first text node and returns it
+let findTextNode = (node) => {
+    // early stop when text node was found
+    if(node.nodeType == Node.TEXT_NODE) return node;
+    // early stop when node is undefined
+    if(node === undefined)              return node;
+
+    let children = node.childNodes;
+    if(children === undefined) return undefined;
+
+    for(let i = 0; i < children.length; i++) {
+        let childNode = findTextNode(children[i]);
+        if(childNode != undefined) return childNode;
+    }
+
+    return undefined;
+}
+
 // set a debug message
 let debug = (text) => {
     document.getElementById('db').innerHTML += text+"<br>";
 }
 
-export {createTemplate, processTranslation, fillPinyin, addHRIfHintIsPresent};
+export {createTemplate, processTranslation, fillPinyin, addHRIfHintIsPresent, findTextNode};

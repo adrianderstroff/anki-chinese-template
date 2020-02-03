@@ -1,9 +1,11 @@
-import {processTranslation, fillPinyin, addHRIfHintIsPresent} from './create';
+import {processTranslation, fillPinyin, addHRIfHintIsPresent, findTextNode} from './create';
 
 let makeBack = () => {
     let translationText = document.getElementById('tl');
-    if (translationText != null) {
-        translationText = translationText.innerHTML;			
+    translationText = findTextNode(translationText);
+
+    if (translationText != undefined) {
+        translationText = translationText.nodeValue;			
         processTranslation(translationText,'tl');
     }
 
