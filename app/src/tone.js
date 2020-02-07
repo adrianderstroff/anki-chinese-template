@@ -49,7 +49,7 @@ let makeTonemarks = (word, tone) => {
         }
     }
 
-    // if an index had been found add tone mark to that vocal
+    // if an index had been found add a tone mark to that vocal
     if (idx !== -1) {
         let char = word.charAt(idx);
         let charWithTone = getCharWithTone(char, tone);

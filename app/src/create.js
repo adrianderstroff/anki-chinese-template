@@ -56,7 +56,7 @@ let processTranslation = (text, translationId) => {
     if (translations != undefined) {
         for (let i = 0; i < translations.length; i++) {
             let translationDiv = document.createElement('div');
-            translationDiv.innerHTML = translations[i];
+            translationDiv.innerHTML = translations[i].trim();
             root.appendChild(translationDiv);
         }   
     }
@@ -88,7 +88,7 @@ let addHRIfHintIsPresent = () => {
         if (hints != undefined) {
             for (let i = 0; i < hints.length; i++) {
                 let hintDiv = document.createElement('div');
-                hintDiv.innerHTML = hints[i];
+                hintDiv.innerHTML = hints[i].trim();
                 parent.appendChild(hintDiv);
             }   
         }

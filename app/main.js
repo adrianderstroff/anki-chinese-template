@@ -20,7 +20,7 @@ const cards = [
     }, {
         hanzi: '有的...,有的....',
         pinyin: 'you3 de ... , you3 de ... .',
-        translation: 'some ..., some ...',
+        translation: 'some ..., some ...  ;   this is another line',
         hint: 'this is hint 1'
     }
 ]

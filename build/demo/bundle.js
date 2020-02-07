@@ -250,7 +250,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       if (null != i) for (var _e4 = 0; _e4 < i.length; _e4++) {
         var _n4 = document.createElement("div");
 
-        _n4.innerHTML = i[_e4], t.appendChild(_n4);
+        _n4.innerHTML = i[_e4].trim(), t.appendChild(_n4);
       }
     }(e, "tl")), function () {
       var e = document.getElementsByTagName("pinyin");
@@ -273,7 +273,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         if (_t4.innerHTML = "", null != _i2) for (var _e6 = 0; _e6 < _i2.length; _e6++) {
           var _n7 = document.createElement("div");
 
-          _n7.innerHTML = _i2[_e6], _t4.appendChild(_n7);
+          _n7.innerHTML = _i2[_e6].trim(), _t4.appendChild(_n7);
         }
       }
     }();
@@ -297,7 +297,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }, {
     hanzi: "有的...,有的....",
     pinyin: "you3 de ... , you3 de ... .",
-    translation: "some ..., some ...",
+    translation: "some ..., some ...  ;   this is another line",
     hint: "this is hint 1"
   }];
   document.addEventListener("DOMContentLoaded", function (e) {
