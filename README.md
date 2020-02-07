@@ -13,12 +13,20 @@ style5 | style6
 
 ## Usage
 
-Anki and Ankidroid allow the user to create their own card types. To use this template, create a new card type. Then add the for card fields ***Hanzi***, ***Pinyin***, ***Translation*** and ***Hint***. Make sure that they all start with uppercase characters and that there are no spelling errors, else the card might not work properly.  
-Now there should be three text fields that allow you to change the appearance of cards. The fields should be ***front template***, ***style***, ***back tempate***. Now take the contents of build/anki/front.html and paste them all into the ***front template***, take the contents of build/anki/back.html into the ***back tempate*** and finally take one of the style\<X\>.css files and copy that file's contents into the ***style***. Afterwards you should be good to go.
+To be able to use the chinese template execute the following steps:
+- Create a new ***note type*** and give it a name of your choice.
+- Add the 4 fields ***Hanzi***, ***Pinyin***, ***Translation*** and ***Hint*** to your new note type. Make sure that the field names contain no typos.
+- Edit the appearance of the cards. You should see a menu that has 3 fields for the ***front***, ***back*** and ***styling*** of the cards.
+- Navigate to <https://github.com/adrianderstroff/anki-chinese-template/tree/master/build/anki>.
+- There take the contents of the file ***front.html*** and copy them in Anki into the ***front*** text field.
+- Take the contents of the file ***back.html*** and copy them in Anki into the ***back*** text field.
+- Take one of the ***styleX.css*** files and copy it's contents in Anki into the ***styling*** text field. In the previous section you have an overview of the different styles.
+
+Now you are ready to create cards with the new note type. The following section will describe how to write cards using this template.
 
 ## How to write the chinese cards
 
-To create the layout the number of *chunks* for pinyin and hanzi have to fit. For hanzi every character is a chunk. Also up to three dots are a chunk, so that you can write ... and those dots will be grouped together. If you want to have a normal dot, which denotes the end of a sentence, simply type another dot, so basically four dots in a row.  This will be interpreted as "..." ".". Make sure that no whitespace is used for the hanzi. 
+To create the layout the number of *chunks* for pinyin and hanzi have to fit. For hanzi every character is a chunk. Also up to three dots are a chunk, so that you can write ... and those dots will be grouped together. If you want to have a normal dot after ... simply type another dot, so basically four dots in a row.  This will be interpreted as "..." ".". Make sure that no whitespace is used for the hanzi. 
 
 For pinyin, combinations of characters separated by whitespaces are grouped into chunks. To specify the tone for a chunk the last character has to be a number between 1 and 5, those numbers correspond to the tones used in most dictionaries. If no number is specified at the end it is implicitly assumed to be tone number 5.
 
