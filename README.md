@@ -5,11 +5,11 @@ Hanzi and pinyin are wrapped in a box with a color that corresponds to a tone. T
 
 style1 | style2
 :------|------:
-![Mesh Instancing](github/style1.PNG) | ![Mesh Instancing](github/style2.PNG)
+![style1](github/style1.PNG) | ![style2](github/style2.PNG)
 style3 | style4
-![Mesh Instancing](github/style3.PNG) | ![Mesh Instancing](github/style4.PNG)
+![style3](github/style3.PNG) | ![style4](github/style4.PNG)
 style5 | style6
-![Mesh Instancing](github/style5.PNG) | ![Mesh Instancing](github/style6.PNG)
+![style5](github/style5.PNG) | ![style6](github/style6.PNG)
 
 ## Usage
 
@@ -62,9 +62,16 @@ It is now possible to annotate the word typ of the translation. The word types a
 So the corresponding annotations of the word types are **n:**, **v:**, **mw:**, **adj:**, **adv:**. Make sure that the : is part of the annotation and the annotations have to be lowercase. The result of the annotation is a colored circle at the beginning of a line.
 
 In the translation field you could for example write something like this:
+
 ```
 n: worker ; v: to work ; mw: 个 ; adj: hardworking ; adv: hardworkingly
 ```
+
+The result is a list of the different lines with the respective colored circles as can be seen below:
+
+![annotations](github/annotations.PNG)
+
+If no annotation is provided then no circle will be displayed. Below is an overview of the word types, annotations and respective colors.
 
 | word type    | annotation | color 	|
 |--------------|------------|-----------|

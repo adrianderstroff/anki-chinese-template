@@ -35,7 +35,7 @@ const cards = [
     }, {
         hanzi: '有的...',
         pinyin: 'you3 de ...',
-        translation: 'this is a verb ; this is a noun ; this a measure word ; this an adjective ; this an adverb',
+        translation: 'n: worker ; v: to work ; mw: 个 ; adj: hardworking ; adv: hardworkingly',
         hint: ''
     }
 ]
@@ -47,7 +47,7 @@ let insertCard = (c) => {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    insertCard(cards[5]);
+    insertCard(cards[6]);
     makeFront();
     makeBack();
 });

@@ -125,11 +125,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         l = 6,
         o = -1;
 
-    for (var a = 0; a < e.length; a++) {
-      var _n = e.charAt(a),
+    for (var d = 0; d < e.length; d++) {
+      var _n = e.charAt(d),
           _t = r(_n);
 
-      _t <= l && (l = _t, o = a);
+      _t <= l && (l = _t, o = d);
     }
 
     if (-1 !== o) {
@@ -174,17 +174,17 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     return n.appendChild(t), n;
   },
-      a = function a(e) {
-    if (null === e) return [d(""), d("")];
+      d = function d(e) {
+    if (null === e) return [a(""), a("")];
     var n = e.split(" ");
-    if (0 === n.length) return [d(""), d(e)];
+    if (0 === n.length) return [a(""), a(e)];
     var t = n[0],
         i = void 0;
-    if (-1 !== t.indexOf("adv:") ? i = "adv" : -1 !== t.indexOf("adj:") ? i = "adj" : -1 !== t.indexOf("mw:") ? i = "mw" : -1 !== t.indexOf("v:") ? i = "verb" : -1 !== t.indexOf("n:") && (i = "noun"), void 0 === i) return [d(""), d(e)];
+    if (-1 !== t.indexOf("adv:") ? i = "adv" : -1 !== t.indexOf("adj:") ? i = "adj" : -1 !== t.indexOf("mw:") ? i = "mw" : -1 !== t.indexOf("v:") ? i = "verb" : -1 !== t.indexOf("n:") && (i = "noun"), void 0 === i) return [a(""), a(e)];
     var r = n.slice(1, e.length).join(" ");
-    return [d("", "desc " + i), d(r)];
+    return [a("", "desc " + i), a(r)];
   },
-      d = function d(e, n) {
+      a = function a(e, n) {
     var t = document.createTextNode(e),
         i = t;
     return void 0 !== n && (i = document.createElement("div"), i.className = n, i.appendChild(t)), i;
@@ -240,12 +240,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       var _n4 = t[_e4],
           _l2 = s(i[_e4]),
           _o = _l2.pinyin,
-          _a = _l2.tone;
+          _d = _l2.tone;
 
       r.push({
         hanzi: _n4,
         pinyin: _o,
-        tone: _a
+        tone: _d
       });
     }
 
@@ -258,7 +258,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     e = u(e), n = u(n), e = void 0 === e ? "" : e.nodeValue, n = void 0 === n ? "" : n.nodeValue, function (e, n, t, i) {
       if (e) {
         var _o2 = document.getElementById(n),
-            _a2 = document.createElement("wrap");
+            _d2 = document.createElement("wrap");
 
         window.savedPinyin = [];
 
@@ -269,9 +269,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
           _i2.innerHTML = e[r].hanzi, _i2.className = "tone" + e[r].tone + _t4;
 
-          var _d = document.createElement("pinyin");
+          var _a = document.createElement("pinyin");
 
-          window.savedPinyin.push(l(e[r].pinyin, e[r].tone)), _d.innerHTML = "&zwnj;", _d.className = "tone" + e[r].tone + _t4, _n5.appendChild(_i2), _n5.appendChild(_d), _a2.appendChild(_n5), _o2.appendChild(_a2);
+          window.savedPinyin.push(l(e[r].pinyin, e[r].tone)), _a.innerHTML = "&zwnj;", _a.className = "tone" + e[r].tone + _t4, _n5.appendChild(_i2), _n5.appendChild(_a), _d2.appendChild(_n5), _o2.appendChild(_d2);
         }
 
         document.getElementById(t).outerHTML = "", document.getElementById(i).outerHTML = "";
@@ -290,7 +290,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
         for (var _n7 = 0; _n7 < i.length; _n7++) {
           var _t5 = i[_n7].trim(),
-              _r4 = a(_t5);
+              _r4 = d(_t5);
 
           _e5.push(_r4);
         }
@@ -356,11 +356,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }, {
     hanzi: "有的...",
     pinyin: "you3 de ...",
-    translation: "this is a verb ; this is a noun ; this a measure word ; this an adjective ; this an adverb",
+    translation: "n: worker ; v: to work ; mw: 个 ; adj: hardworking ; adv: hardworkingly",
     hint: ""
   }];
   document.addEventListener("DOMContentLoaded", function (e) {
     var n;
-    n = y[5], document.getElementById("hz").innerHTML = n.hanzi, document.getElementById("py").innerHTML = n.pinyin, document.getElementById("tl").innerHTML = n.translation, document.getElementById("aw").innerHTML = n.hint, m(), p();
+    n = y[6], document.getElementById("hz").innerHTML = n.hanzi, document.getElementById("py").innerHTML = n.pinyin, document.getElementById("tl").innerHTML = n.translation, document.getElementById("aw").innerHTML = n.hint, m(), p();
   });
 }]);
