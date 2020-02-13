@@ -55,6 +55,26 @@ This is the first line
 And this one the next line
 ```
 
+#### Annotating translation
+
+It is now possible to annotate the word typ of the translation. The word types are **noun**, **verb**, **measure word**, **adjective**, **adverb**. To annotate a translation, the annotation has to be the first non-whitespace word in a line. As shown above a translation and hint can be split into different lines by using semicolon as a delimiter. 
+
+So the corresponding annotations of the word types are **n:**, **v:**, **mw:**, **adj:**, **adv:**. Make sure that the : is part of the annotation and the annotations have to be lowercase. The result of the annotation is a colored circle at the beginning of a line.
+
+In the translation field you could for example write something like this:
+```
+n: worker ; v: to work ; mw: 个 ; adj: hardworking ; adv: hardworkingly
+```
+
+| word type    | annotation | color 	|
+|--------------|------------|-----------|
+| noun  	   | n:         | red 		|
+| verb 	       | v:         | blue   	|
+| measure word | mw:        | yellow 	|
+| adjective    | adj:       | blue  	|
+| adverb 	   | adv:       | purple 	|
+
+
 ## Colors
 
 This template has a custom color coding. But can be changed to fit color codings of other programs.
