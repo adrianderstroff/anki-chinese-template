@@ -43,7 +43,9 @@ let makeTonemarks = (word, tone) => {
     for (var i = 0; i < word.length; i++) {
         let char = word.charAt(i);
         let priority = getVocalPriority(char);
-        if (priority < highestPriority) {
+        // take smaller or equal priority. In case of liu, both i and u have the
+        // same priority, in that case we want the tone mark above the u
+        if (priority <= highestPriority) {
             highestPriority = priority;
             idx = i;
         }

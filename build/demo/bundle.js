@@ -129,7 +129,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       var _n = e.charAt(a),
           _t = r(_n);
 
-      _t < l && (l = _t, o = a);
+      _t <= l && (l = _t, o = a);
     }
 
     if (-1 !== o) {
@@ -259,6 +259,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       if (e) {
         var _o2 = document.getElementById(n),
             _a2 = document.createElement("wrap");
+
+        window.savedPinyin = [];
 
         for (var r = 0; r < e.length; r++) {
           var _n5 = document.createElement("character"),

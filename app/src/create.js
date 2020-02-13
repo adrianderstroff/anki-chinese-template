@@ -11,6 +11,9 @@ let createTemplate = (words, resultId, hanziId, pinyinId) => {
         let root = document.getElementById(resultId);
         let wrap = document.createElement('wrap');
 
+        // reset saved pinyin
+        window.savedPinyin = [];
+
         // for each word create a compound of hanzi and pinyin enclosed into
         // a colored block that reflects the respective tone
         for(var i = 0; i < words.length; i++) {
