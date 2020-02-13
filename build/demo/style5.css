@@ -38,9 +38,8 @@ hanzi {
 	font-weight: bold;
 }
 
-hanzi.small {
-	font-size: x-large;
-}
+hanzi.small   { font-size: x-large; }
+hanzi.smaller { font-size: large;   }
 
 hanzi.tone1 { color: #ff0000; }
 hanzi.tone2 { color: #d89000; }
@@ -61,15 +60,26 @@ pinyin {
 	text-align: center;
 }
 
-pinyin.small {
-	font-size: small;
-}
+pinyin.small   { font-size: small;   }
+pinyin.smaller { font-size: x-small; }
 
 pinyin.tone1 { color: #ff0000; }
 pinyin.tone2 { color: #d89000; }
 pinyin.tone3 { color: #00a000; }
 pinyin.tone4 { color: #0000ff; }
 pinyin.tone5 { color: #808080; }
+
+.desc {
+	padding: 0.5em;
+	border-radius: 100%;
+	margin: 0;
+	margin-right: 5px;
+}
+.noun { background: #e74c3c; } 
+.verb { background: #4375cf; }
+.mw   { background: #eeac29; }
+.adj  { background: #27ae60; }
+.adv  { background: #8f5c96; }
 
 container {
 	display: block;

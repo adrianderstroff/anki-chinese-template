@@ -18,7 +18,7 @@ let createTemplate = (words, resultId, hanziId, pinyinId) => {
             let charComp = document.createElement('character');
 
             // add special class when there are more than 4 characters
-            let isSmallClass = (words.length > 4) ? " small" : "";
+            let isSmallClass = (words.length > 5) ? " smaller" : ((words.length > 3) ? " small" : "");
 
             // create hanzi container
             let hanziComp = document.createElement('hanzi');
@@ -54,12 +54,85 @@ let processTranslation = (text, translationId) => {
     // split translation separated by semicolon into different divs
     let translations = text.split(';');
     if (translations != undefined) {
+        // create table contents
+        let tableData = [];
         for (let i = 0; i < translations.length; i++) {
-            let translationDiv = document.createElement('div');
-            translationDiv.innerHTML = translations[i].trim();
-            root.appendChild(translationDiv);
-        }   
+            let text = translations[i].trim();
+            
+            let desc = findWordDescription(text);
+            tableData.push(desc);
+        }
+
+        // create the actual table
+        let table = createTable(tableData);
+        root.appendChild(table);
     }
+}
+
+let createTable = (rowOfRows) => {
+    let table = document.createElement('table');
+    let tbody = document.createElement('tbody');
+
+    for(let i = 0; i < rowOfRows.length; i++) {
+        let row = rowOfRows[i];
+        let trow = document.createElement('tr');
+        for(let j = 0; j < row.length; j++) {
+            let tdata = document.createElement('td');
+            let node = row[j];
+            tdata.appendChild(node);
+            trow.appendChild(tdata);
+        }
+        tbody.appendChild(trow);
+    }
+
+    table.appendChild(tbody);
+    return table;
+}
+
+// check if the line has a word description, if yes return that description and
+// also remove that description from the line
+let findWordDescription = (line) => {
+    // input is empty
+    if(line === null) 
+        return [textNode(''), textNode('')];
+
+    // divide line
+    let tokens = line.split(' ');
+
+    // no split lines
+    if(tokens.length === 0) 
+        return [textNode(''), textNode(line)];
+
+    // check for the description
+    let token = tokens[0];
+    let description = undefined;
+    if     (token.indexOf('adv:') !== -1) description = 'adv';
+    else if(token.indexOf('adj:') !== -1) description = 'adj';
+    else if(token.indexOf('mw:')  !== -1) description = 'mw';
+    else if(token.indexOf('v:')   !== -1) description = 'verb';
+    else if(token.indexOf('n:')   !== -1) description = 'noun';
+
+    // no description found
+    if(description === undefined)
+        return [textNode(''), textNode(line)];
+    
+    let remainder = tokens.slice(1, line.length).join(' ');
+    return [textNode('', 'desc '+description), textNode(remainder)];
+} 
+
+// creates a text node
+let textNode = (text, className) => {
+    let tn = document.createTextNode(text);
+
+    // add wrapper to textNode if className is specified
+    let result = tn;
+    if(className !== undefined) {
+        result = document.createElement('div');
+        result.className = className;
+        result.appendChild(tn);
+    }
+
+    return result;
 }
 
 // add pinyin to its dom elements
@@ -78,18 +151,17 @@ let addHRIfHintIsPresent = () => {
         // add ruler before hint
         let hr = document.createElement('hr');
         let aw = document.getElementById('aw');
-        aw = findTextNode(aw);
         let parent = aw.parentNode;
         parent.insertBefore(hr, aw);
 
         // split hints separated by ; into different divs
-        let hints = aw.nodeValue.split(';');
-        parent.innerHTML = "";
+        let hints = aw.innerText.split(';');
+        aw.innerHTML = "";
         if (hints != undefined) {
             for (let i = 0; i < hints.length; i++) {
                 let hintDiv = document.createElement('div');
                 hintDiv.innerHTML = hints[i].trim();
-                parent.appendChild(hintDiv);
+                aw.appendChild(hintDiv);
             }   
         }
     }
@@ -111,11 +183,6 @@ let findTextNode = (node) => {
     }
 
     return undefined;
-}
-
-// set a debug message
-let debug = (text) => {
-    document.getElementById('db').innerHTML += text+"<br>";
 }
 
 export {createTemplate, processTranslation, fillPinyin, addHRIfHintIsPresent, findTextNode};

@@ -22,6 +22,21 @@ const cards = [
         pinyin: 'you3 de ... , you3 de ... .',
         translation: 'some ..., some ...  ;   this is another line',
         hint: 'this is hint 1'
+    }, {
+        hanzi: '有的...',
+        pinyin: 'you3 de ...',
+        translation: 'v: this is a verb  ; n: this is a noun ; a: this is an adjective ; adv: this is an adverb ; mv: this is a measure word',
+        hint: 'this is hint 1'
+    }, {
+        hanzi: '有的...',
+        pinyin: 'you3 de ...',
+        translation: 'v: this is a verb ; n: this is a noun ; mw: this a measure word ; adj: this an adjective ; adv: this an adverb',
+        hint: ''
+    }, {
+        hanzi: '有的...',
+        pinyin: 'you3 de ...',
+        translation: 'this is a verb ; this is a noun ; this a measure word ; this an adjective ; this an adverb',
+        hint: ''
     }
 ]
 let insertCard = (c) => {
@@ -32,7 +47,7 @@ let insertCard = (c) => {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    insertCard(cards[3]);
+    insertCard(cards[5]);
     makeFront();
     makeBack();
 });
