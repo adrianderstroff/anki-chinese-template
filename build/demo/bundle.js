@@ -120,21 +120,21 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var n = i[e];
     return n = null != n ? n.priority : 5, n;
   },
-      l = function l(e, n) {
+      o = function o(e, n) {
     var t = e,
-        l = 6,
-        o = -1;
+        o = 6,
+        l = -1;
 
     for (var d = 0; d < e.length; d++) {
       var _n = e.charAt(d),
           _t = r(_n);
 
-      _t <= l && (l = _t, o = d);
+      _t <= o && (o = _t, l = d);
     }
 
-    if (-1 !== o) {
-      var _r = e.charAt(o),
-          _l = function (e, n) {
+    if (-1 !== l) {
+      var _r = e.charAt(l),
+          _o = function (e, n) {
         var t = "",
             r = i[e];
 
@@ -146,7 +146,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         return t;
       }(_r, n);
 
-      t = e.replace(_r, _l);
+      t = e.replace(_r, _o);
     }
 
     return t;
@@ -154,7 +154,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
   void 0 === window.savedPinyin && (window.savedPinyin = []);
 
-  var o = function o(e) {
+  var l = function l(e) {
     var n = document.createElement("table"),
         t = document.createElement("tbody");
 
@@ -180,7 +180,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     if (0 === n.length) return [a(""), a(e)];
     var t = n[0],
         i = void 0;
-    if (-1 !== t.indexOf("adv:") ? i = "adv" : -1 !== t.indexOf("adj:") ? i = "adj" : -1 !== t.indexOf("mw:") ? i = "mw" : -1 !== t.indexOf("v:") ? i = "verb" : -1 !== t.indexOf("n:") && (i = "noun"), void 0 === i) return [a(""), a(e)];
+    if (-1 !== t.indexOf("adv:") ? i = "adv" : -1 !== t.indexOf("adj:") ? i = "adj" : -1 !== t.indexOf("con:") ? i = "con" : -1 !== t.indexOf("pre:") ? i = "pre" : -1 !== t.indexOf("mw:") ? i = "mw" : -1 !== t.indexOf("v:") ? i = "verb" : -1 !== t.indexOf("n:") && (i = "noun"), void 0 === i) return [a(""), a(e)];
     var r = n.slice(1, e.length).join(" ");
     return [a("", "desc " + i), a(r)];
   },
@@ -203,7 +203,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var h = function h(e) {
     return "." === e;
   },
-      s = function s(e) {
+      c = function c(e) {
     var n = e.length,
         t = e,
         i = "5";
@@ -213,7 +213,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       tone: i
     };
   },
-      c = function c(e, n) {
+      s = function s(e, n) {
     var t = function (e) {
       var n = [],
           t = "";
@@ -238,13 +238,13 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     for (var _e4 = 0; _e4 < t.length; _e4++) {
       var _n4 = t[_e4],
-          _l2 = s(i[_e4]),
-          _o = _l2.pinyin,
-          _d = _l2.tone;
+          _o2 = c(i[_e4]),
+          _l = _o2.pinyin,
+          _d = _o2.tone;
 
       r.push({
         hanzi: _n4,
-        pinyin: _o,
+        pinyin: _l,
         tone: _d
       });
     }
@@ -257,7 +257,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         n = document.getElementById("py");
     e = u(e), n = u(n), e = void 0 === e ? "" : e.nodeValue, n = void 0 === n ? "" : n.nodeValue, function (e, n, t, i) {
       if (e) {
-        var _o2 = document.getElementById(n),
+        var _l2 = document.getElementById(n),
             _d2 = document.createElement("wrap");
 
         window.savedPinyin = [];
@@ -271,12 +271,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
           var _a = document.createElement("pinyin");
 
-          window.savedPinyin.push(l(e[r].pinyin, e[r].tone)), _a.innerHTML = "&zwnj;", _a.className = "tone" + e[r].tone + _t4, _n5.appendChild(_i2), _n5.appendChild(_a), _d2.appendChild(_n5), _o2.appendChild(_d2);
+          window.savedPinyin.push(o(e[r].pinyin, e[r].tone)), _a.innerHTML = "&zwnj;", _a.className = "tone" + e[r].tone + _t4, _n5.appendChild(_i2), _n5.appendChild(_a), _d2.appendChild(_n5), _l2.appendChild(_d2);
         }
 
         document.getElementById(t).outerHTML = "", document.getElementById(i).outerHTML = "";
       }
-    }(c(e, n), "ch", "hz", "py");
+    }(s(e, n), "ch", "hz", "py");
   },
       p = function p() {
     var e = document.getElementById("tl");
@@ -295,7 +295,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           _e5.push(_r4);
         }
 
-        var _n6 = o(_e5);
+        var _n6 = l(_e5);
 
         t.appendChild(_n6);
       }
@@ -356,7 +356,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }, {
     hanzi: "有的...",
     pinyin: "you3 de ...",
-    translation: "n: worker ; v: to work ; mw: 个 ; adj: hardworking ; adv: hardworkingly",
+    translation: "n: worker ; v: to work ; mw: 个 ; adj: hardworking ; adv: hardworkingly ; con: and, with ; pre: on, under, in",
     hint: ""
   }];
   document.addEventListener("DOMContentLoaded", function (e) {

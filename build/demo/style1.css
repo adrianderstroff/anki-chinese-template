@@ -63,7 +63,7 @@ pinyin.tone4 { background-color: #9B59B6; }
 pinyin.tone5 { background-color: #95A5A6; }
 
 .desc {
-	padding: 0.5em;
+	padding: 0.25em;
 	border-radius: 100%;
 	margin: 0;
 	margin-right: 5px;
@@ -73,6 +73,8 @@ pinyin.tone5 { background-color: #95A5A6; }
 .mw   { background: #eeac29; }
 .adj  { background: #27ae60; }
 .adv  { background: #8f5c96; }
+.con  { background: #7f8c8d; }
+.pre  { background: #a47665; }
 
 container {
 	display: block;

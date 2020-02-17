@@ -109,11 +109,13 @@ let findWordDescription = (line) => {
     // check for the description
     let token = tokens[0];
     let description = undefined;
-    if     (token.indexOf('adv:') !== -1) description = 'adv';
-    else if(token.indexOf('adj:') !== -1) description = 'adj';
-    else if(token.indexOf('mw:')  !== -1) description = 'mw';
-    else if(token.indexOf('v:')   !== -1) description = 'verb';
-    else if(token.indexOf('n:')   !== -1) description = 'noun';
+    if     (token.indexOf('adv:') !== -1) description = 'adv';  // adverb
+    else if(token.indexOf('adj:') !== -1) description = 'adj';  // adjective
+    else if(token.indexOf('con:') !== -1) description = 'con';  // conjunction
+    else if(token.indexOf('pre:') !== -1) description = 'pre';  // preposition
+    else if(token.indexOf('mw:')  !== -1) description = 'mw';   // measure word
+    else if(token.indexOf('v:')   !== -1) description = 'verb'; // verb
+    else if(token.indexOf('n:')   !== -1) description = 'noun'; // noun
 
     // no description found
     if(description === undefined)

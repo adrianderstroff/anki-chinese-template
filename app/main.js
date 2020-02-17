@@ -35,7 +35,7 @@ const cards = [
     }, {
         hanzi: '有的...',
         pinyin: 'you3 de ...',
-        translation: 'n: worker ; v: to work ; mw: 个 ; adj: hardworking ; adv: hardworkingly',
+        translation: 'n: worker ; v: to work ; mw: 个 ; adj: hardworking ; adv: hardworkingly ; con: and, with ; pre: on, under, in',
         hint: ''
     }
 ]
